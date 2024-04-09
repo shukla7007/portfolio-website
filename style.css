@@ -1,0 +1,285 @@
+/* Reset and global styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root {
+    --lighting-color: #222831;
+    --dark-color: #393E46;
+    --darker-color: #00ADB5;
+    --secondary-color: #EEEEEE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body, html {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: azure;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+header {
+    background: var(--lighting-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav li {
+    font-size: 0.75rem;
+    border-bottom: 0.4rem var transparent solid;
+    transition: 0.3s ease-in-out;
+}
+
+nav li:hover {
+    border-bottom: 0.4rem var(--secondary-color) solid;
+}
+
+.logo {
+    font-size: 1rem;
+    font-weight: 700;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Hero Section */
+#hero {
+    background-color: var(--darker-color);
+    padding: 4rem 0;
+    position: relative;
+    text-align: center;
+    border-bottom: 4px solid var(--lighting-color);
+}
+
+.hero-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-content {
+    margin-top: 20px;
+}
+
+.hi_text {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+    color: rgb(170, 255, 0);
+}
+
+.name_text {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    overflow: hidden;
+    border-right: 0.15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    display: inline-block;
+    animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+/* Project Section */
+#project {
+    background: var(--dark-color);
+    padding: 4rem 0;
+}
+
+#project h2 {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    max-width: 300px;
+    width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    background-color: var(--lighting-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-content {
+    transform: translateY(0);
+}
+
+.card-content h3 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+/* Contact Section */
+#contact {
+    background: var(--dark-color);
+    padding: 4rem 0;
+}
+
+#contact h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: white;
+}
+
+.top-contact, .bottom-contact {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-way {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.contact-way i {
+    font-size: 2rem;
+}
+
+.contact-way h3 {
+    font-size: 1.4rem;
+}
+
+/* Footer */
+footer {
+    background: var(--darker-color);
+    padding: 2rem;
+    color: white;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+/* Media Query */
+@media (max-width: 786px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+.linkedin-link {
+    color: yellowgreen;
+  }
+  
+  .github-link {
+    color: yellowgreen;
+  }
+  
